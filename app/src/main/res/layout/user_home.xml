@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background"
+    >
+
+
+
+
+    <LinearLayout
+        android:id="@+id/user_home_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal"
+        android:background="@drawable/user_home_title_background"
+
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+            
+            <ImageView
+                android:id="@+id/user_home_person_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/user_home_person_image"
+                android:layout_gravity="center"
+                android:scaleType="center"
+                />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            >
+
+            <TextView
+                android:id="@+id/user_home_person_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jack Blonde"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:paddingTop="30dp"
+                />
+
+            <TextView
+                android:id="@+id/user_home_person_profile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/user_home_person_name"
+                android:text="View and edit your frofile"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                android:paddingTop="5dp"
+                android:gravity="start"
+                />
+
+
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/user_home_option"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/user_home_title_layout"
+        android:orientation="vertical"
+        android:paddingBottom="48dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/user_home_option_bg"
+            android:padding="1dp"
+            >
+            
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+                
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" 
+                    android:src="@drawable/foot_user"
+                    android:layout_gravity="center"
+                    android:scaleType="center"
+                    />
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:orientation="vertical"
+                >
+                
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Photos"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp"
+                    android:gravity="bottom"
+                    android:padding="3dp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="3432"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    android:gravity="start"
+                    android:padding="3dp"
+                    />
+                
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/user_home_option_info"
+                    android:layout_gravity="center"
+                    android:scaleType="center"
+                    />
+
+            </LinearLayout>
+            
+
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/user_home_option_bg"
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/foot_user"
+                    android:layout_gravity="center"
+                    android:scaleType="center"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Health center"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp"
+                    android:gravity="bottom"
+                    android:padding="3dp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="None"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    android:gravity="start"
+                    android:padding="3dp"
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/user_home_option_info"
+                    android:layout_gravity="center"
+                    android:scaleType="center"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/user_home_option_bg"
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/foot_user"
+                    android:layout_gravity="center"
+                    android:scaleType="center"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="System Setting"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp"
+                    android:gravity="bottom"
+                    android:padding="3dp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="None"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    android:gravity="start"
+                    android:padding="3dp"
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/user_home_option_info"
+                    android:layout_gravity="center"
+                    android:scaleType="center"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+
+            ></LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/main_foot"
+        layout="@layout/foot"
+        >
+
+    </include>
+
+
+</RelativeLayout>

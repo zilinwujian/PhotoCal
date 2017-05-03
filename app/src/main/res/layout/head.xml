@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/head_background"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:src="@drawable/head_background"
+        android:scaleType="fitXY"
+        />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <ImageButton
+            android:id="@+id/head_back"
+            android:layout_width="15dp"
+            android:layout_height="30dp"
+            android:src="@drawable/head_back"
+            android:background="#00000000"
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"
+            />
+        
+        <TextView
+            android:id="@+id/head_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PhotoCal"
+            android:textSize="32sp"
+            android:textColor="#ffffff"
+            android:fontFamily="sans-serif"
+            android:layout_centerInParent="true"
+            />
+
+        <ImageButton
+            android:id="@+id/head_info"
+            android:layout_width="20dp"
+            android:layout_height="27dp"
+            android:background="@drawable/head_info"
+            android:scaleType="fitEnd"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            />
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

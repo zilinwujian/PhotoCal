@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background"
+    >
+
+    <include
+        android:id="@+id/main_head"
+        layout="@layout/head">
+
+    </include>
+
+    <ListView
+        android:id="@+id/each_mooth_food_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        >
+
+    </ListView>
+
+
+    <include
+        android:id="@+id/main_foot"
+        layout="@layout/foot"
+        >
+
+    </include>
+
+</LinearLayout>

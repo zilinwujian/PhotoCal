@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.liuxingyu.photocal.MainActivity"
+    android:background="@drawable/main_background"
+    android:weightSum="1">
+
+
+
+
+    <ListView
+        android:id="@+id/main_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="48dp"
+        android:paddingBottom="48dp"
+        >
+
+    </ListView>
+
+
+    <!--<com.example.liuxingyu.photocal.controller.TitleLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--&gt;</com.example.liuxingyu.photocal.controller.TitleLayout>-->
+
+
+
+    <include
+        android:id="@+id/main_head"
+        layout="@layout/head">
+
+    </include>
+
+    <include
+        android:id="@+id/main_foot"
+        layout="@layout/foot"
+        >
+
+    </include>
+
+
+
+
+
+
+</RelativeLayout>

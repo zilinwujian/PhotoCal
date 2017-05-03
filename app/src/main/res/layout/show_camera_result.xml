@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background">
+
+    <include layout="@layout/head" />
+
+    <LinearLayout
+        android:id="@+id/show_result"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        >
+
+        <ImageView
+            android:id="@+id/iv_camera_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:scaleType="fitXY"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/show_result_option"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+        <ImageButton
+            android:id="@+id/album_reset"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:src="@drawable/camera_album"
+            android:scaleType="fitCenter"
+            android:background="#00000000"
+            android:layout_gravity="center"
+            />
+
+        <ImageButton
+            android:id="@+id/album_takephoto"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:src="@drawable/album_takephoto"
+            android:background="#00000000"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center"
+            />
+
+        <ImageButton
+            android:id="@+id/ablum_photo_confirm"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="3"
+            android:src="@drawable/album_photo_confirm"
+            android:background="#00000000"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>
