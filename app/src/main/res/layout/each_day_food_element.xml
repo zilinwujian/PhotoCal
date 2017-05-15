@@ -7,7 +7,7 @@
         android:id="@+id/each_day_food_element"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:scaleType="fitCenter"
+        android:scaleType="centerCrop"
 
 
         />

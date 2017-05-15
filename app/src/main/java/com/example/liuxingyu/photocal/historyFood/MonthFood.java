@@ -15,6 +15,7 @@ import com.example.liuxingyu.photocal.Notification.NotificationHome;
 import com.example.liuxingyu.photocal.R;
 import com.example.liuxingyu.photocal.photo.CustomCamera;
 import com.example.liuxingyu.photocal.userHome.userHome;
+import com.example.liuxingyu.photocal.historyFood.GetHistoryPicList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,13 +55,14 @@ public class MonthFood extends Activity implements View.OnClickListener {
         home.setImageResource(R.drawable.foot_home_white);
 
         String time = getIntent().getStringExtra("Time");
-        if (time.equals("Mar 2017")){
-            initdata();
-            title.setText("Mar 2017");
-        }else{
-            initdata2();
-            title.setText("Feb 2017");
-        }
+//        if (time.equals("Mar 2017")){
+//            initdata();
+//            title.setText("Mar 2017");
+//        }else{
+//            initdata2();
+//            title.setText("Feb 2017");
+//        }
+        initdata3();
 
 
         listView = (ListView) findViewById(R.id.each_mooth_food_listview);
@@ -95,48 +97,61 @@ public class MonthFood extends Activity implements View.OnClickListener {
     }
 
 
-    public void initdata(){
-        EachDayFood food = new EachDayFood(R.drawable.each_food_example1);
-        list.add(food);
-        food = new EachDayFood(R.drawable.each_food_example2);
-        list.add(food);
-        food = new EachDayFood(R.drawable.each_food_example3);
-        list.add(food);
-        food = new EachDayFood(R.drawable.each_food_example4);
-        list.add(food);
-        EachDayFoodGrid foodGrid = new EachDayFoodGrid("01 Mar","2300Kcal",list);
-        gridList.add(foodGrid);
+//    public void initdata(){
+//        EachDayFood food = new EachDayFood(R.drawable.each_food_example1);
+//        list.add(food);
+//        food = new EachDayFood(R.drawable.each_food_example2);
+//        list.add(food);
+//        food = new EachDayFood(R.drawable.each_food_example3);
+//        list.add(food);
+//        food = new EachDayFood(R.drawable.each_food_example4);
+//        list.add(food);
+//        EachDayFoodGrid foodGrid = new EachDayFoodGrid("01 Mar","2300Kcal",list);
+//        gridList.add(foodGrid);
+//
+//        list = new ArrayList<EachDayFood>();
+//
+//        food = new EachDayFood(R.drawable.each_food_example1);
+//        list.add(food);
+//        food = new EachDayFood(R.drawable.each_food_example2);
+//        list.add(food);
+//        food = new EachDayFood(R.drawable.each_food_example3);
+//        list.add(food);
+//        food = new EachDayFood(R.drawable.each_food_example4);
+//        list.add(food);
+//        food = new EachDayFood(R.drawable.each_food_example5);
+//        list.add(food);
+//        food = new EachDayFood(R.drawable.each_food_example6);
+//        list.add(food);
+//        foodGrid = new EachDayFoodGrid("02 Mar","2500Kcal",list);
+//        gridList.add(foodGrid);
+//
+//    }
+//
+//    public void initdata2(){
+//        EachDayFood food = new EachDayFood(R.drawable.each_food_example1);
+//        list.add(food);
+//        food = new EachDayFood(R.drawable.each_food_example2);
+//        list.add(food);
+//        food = new EachDayFood(R.drawable.each_food_example3);
+//        list.add(food);
+//        food = new EachDayFood(R.drawable.each_food_example4);
+//        list.add(food);
+//        EachDayFoodGrid foodGrid = new EachDayFoodGrid("01 Feb","2300Kcal",list);
+//        gridList.add(foodGrid);
+//
+//    }
 
-        list = new ArrayList<EachDayFood>();
-
-        food = new EachDayFood(R.drawable.each_food_example1);
-        list.add(food);
-        food = new EachDayFood(R.drawable.each_food_example2);
-        list.add(food);
-        food = new EachDayFood(R.drawable.each_food_example3);
-        list.add(food);
-        food = new EachDayFood(R.drawable.each_food_example4);
-        list.add(food);
-        food = new EachDayFood(R.drawable.each_food_example5);
-        list.add(food);
-        food = new EachDayFood(R.drawable.each_food_example6);
-        list.add(food);
-        foodGrid = new EachDayFoodGrid("02 Mar","2500Kcal",list);
-        gridList.add(foodGrid);
-
-    }
-
-    public void initdata2(){
-        EachDayFood food = new EachDayFood(R.drawable.each_food_example1);
-        list.add(food);
-        food = new EachDayFood(R.drawable.each_food_example2);
-        list.add(food);
-        food = new EachDayFood(R.drawable.each_food_example3);
-        list.add(food);
-        food = new EachDayFood(R.drawable.each_food_example4);
-        list.add(food);
+    public void initdata3(){
+        GetHistoryPicList gp=new GetHistoryPicList();
+        List<String> picList=gp.getImagePathFromSD();
+        String path;
+        for(int i=0;i<picList.size();i++){
+            path=picList.get(i);
+            EachDayFood food = new EachDayFood(path);
+            list.add(food);
+        }
         EachDayFoodGrid foodGrid = new EachDayFoodGrid("01 Feb","2300Kcal",list);
         gridList.add(foodGrid);
-
     }
 }

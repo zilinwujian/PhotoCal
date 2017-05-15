@@ -40,10 +40,10 @@ public class SimpleNotificationAdapter extends ArrayAdapter<SimpleNotification> 
             viewHolder.image = (ImageView) view.findViewById(R.id.notification_simple_image);
             viewHolder.title = (TextView) view.findViewById(R.id.notification_simple_title);
             viewHolder.state = (TextView)  view.findViewById(R.id.notification_simple_state);
-            view.setTag(viewHolder);         // 将ViewHolder存储在View中
+            view.setTag(viewHolder);                               // 将ViewHolder存储在View中
         } else {
             view = convertView;
-            viewHolder = (ViewHolder) view.getTag(); // 重新获取ViewHolder
+            viewHolder = (ViewHolder) view.getTag();               // 重新获取ViewHolder
         }
         viewHolder.image.setImageResource(note.getImageId());
         viewHolder.title.setText(note.getNotificationTitle());

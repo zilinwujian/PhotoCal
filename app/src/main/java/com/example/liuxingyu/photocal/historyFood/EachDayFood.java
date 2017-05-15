@@ -6,12 +6,21 @@ package com.example.liuxingyu.photocal.historyFood;
 
 public class EachDayFood  {
     private int imageId;
+    private String imagePath;
 
     public EachDayFood(int imageId){
         this.imageId=imageId;
     }
 
+    public EachDayFood(String imagePath){
+        this.imagePath=imagePath;
+    }
+
     public int getImageId(){
         return imageId;
+    }
+
+    public String getImagePath(){
+        return imagePath;
     }
 }

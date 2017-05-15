@@ -1,6 +1,9 @@
 package com.example.liuxingyu.photocal.historyFood;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +13,9 @@ import android.widget.ImageView;
 
 import com.example.liuxingyu.photocal.R;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -39,12 +45,37 @@ public class EachDayFoodGridAdapter extends ArrayAdapter<EachDayFood> {
             view = convertView;
             viewHolder = (ViewHolder) view.getTag(); // 重新获取ViewHolder
         }
-        viewHolder.foodImage.setImageResource(food.getImageId());
+        //viewHolder.foodImage.setImageResource(food.getImageId());
+        viewHolder.foodImage.setImageBitmap(getBitmapFromPath(food.getImagePath()));
         return view;
     }
 
     class ViewHolder {
         ImageView foodImage;
+    }
+
+    private Bitmap getBitmapFromPath(String path) {
+        FileInputStream fis = null;
+        Bitmap bitmap = null;
+        try {
+            fis = new FileInputStream(path);
+            bitmap = BitmapFactory.decodeStream(fis);
+            Matrix matrix = new Matrix();
+            bitmap = Bitmap.createBitmap(bitmap, 0, 0,
+                    bitmap.getWidth(), bitmap.getHeight(),
+                    matrix, true);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            if (fis != null) {
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return bitmap;
     }
 
 

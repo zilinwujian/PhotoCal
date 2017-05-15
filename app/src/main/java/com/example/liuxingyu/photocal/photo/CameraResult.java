@@ -235,22 +235,6 @@ public class CameraResult extends Activity implements View.OnClickListener{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     private Bitmap getBitmapFromPath(String path) {
         FileInputStream fis = null;
         Bitmap bitmap = null;
