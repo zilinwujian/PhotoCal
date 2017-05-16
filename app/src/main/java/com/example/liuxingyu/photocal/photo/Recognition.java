@@ -12,10 +12,12 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.liuxingyu.photocal.MainActivity;
 import com.example.liuxingyu.photocal.R;
+import com.example.liuxingyu.photocal.recognition.AddDishName;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -36,6 +38,7 @@ public class Recognition extends Activity implements View.OnClickListener{
 
     private ImageView imageView;
     private ImageButton confirm;
+    private TextView dishName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +65,9 @@ public class Recognition extends Activity implements View.OnClickListener{
             }
         }
 
+        dishName = (TextView)findViewById(R.id.recognition_name_text);
+        dishName.setOnClickListener(this);
+
         confirm = (ImageButton) findViewById(R.id.recognition_confirm);
         confirm.setOnClickListener(this);
     }
@@ -74,6 +80,12 @@ public class Recognition extends Activity implements View.OnClickListener{
                 saveImageView();
                 Intent intent = new Intent(Recognition.this, MainActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.recognition_name_text:
+               // Toast.makeText(Recognition.this,"dish name",Toast.LENGTH_SHORT).show();
+                Intent intent2 = new Intent(Recognition.this, AddDishName.class);
+                startActivity(intent2);
+
                 break;
             default:
                 break;

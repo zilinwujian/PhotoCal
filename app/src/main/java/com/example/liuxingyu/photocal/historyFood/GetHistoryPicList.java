@@ -13,7 +13,7 @@ import java.util.List;
 public class GetHistoryPicList {
 
     // 从sd卡获取图片资源
-    public List<String> getImagePathFromSD() {
+    public List<String> getImagePathFromSD(String year,String time) {
         // 图片列表
         List<String> picList = new ArrayList<String>();
         // 得到sd卡内路径
@@ -26,7 +26,7 @@ public class GetHistoryPicList {
         // 将所有的文件存入ArrayList中,并过滤所有图片格式的文件
         for (int i = 0; i < files.length; i++) {
             File file = files[i];
-            if (checkIsImageFile(file.getPath())) {
+            if (checkIsImageFile(file.getPath()) && checkIsRequireFile(file.getName(),year,time)) {
                 picList.add(file.getPath());
             }
         }
@@ -49,6 +49,17 @@ public class GetHistoryPicList {
             isImageFile = false;
         }
         return isImageFile;
+    }
+
+    //检查文件名字，得到XXXX年XX月的图片
+    private boolean checkIsRequireFile(String fName,String year,String month){
+        boolean isRequireFile = false;
+        String FileFirst = fName.substring(0,6);
+        String TimeName = year + month;
+        if(FileFirst.equals(TimeName)){
+            isRequireFile=true;
+        }
+        return isRequireFile;
     }
 
 }

@@ -17,6 +17,7 @@ import com.example.liuxingyu.photocal.photo.CustomCamera;
 import com.example.liuxingyu.photocal.userHome.userHome;
 import com.example.liuxingyu.photocal.historyFood.GetHistoryPicList;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -144,14 +145,37 @@ public class MonthFood extends Activity implements View.OnClickListener {
 
     public void initdata3(){
         GetHistoryPicList gp=new GetHistoryPicList();
-        List<String> picList=gp.getImagePathFromSD();
+        List<String> picList=gp.getImagePathFromSD("2017","05");
         String path;
-        for(int i=0;i<picList.size();i++){
-            path=picList.get(i);
+        String FileName = null;
+        String lastFileDay = "-1";
+        String Month="May";
+        if (picList.size() > 0){           //获取第一个文件的天数,生成第一个文件，初始化
+            path = picList.get(0);
             EachDayFood food = new EachDayFood(path);
             list.add(food);
+            FileName = path.substring(path.lastIndexOf("/") + 1, path.length()-4).toLowerCase();
+            lastFileDay =FileName.substring(6,8);
+            EachDayFoodGrid foodGrid = new EachDayFoodGrid(lastFileDay+" "+Month,"2300Kcal",list);
+            gridList.add(foodGrid);
         }
-        EachDayFoodGrid foodGrid = new EachDayFoodGrid("01 Feb","2300Kcal",list);
-        gridList.add(foodGrid);
+        for(int i=1;i<picList.size();i++){
+            path=picList.get(i);
+            FileName = path.substring(path.lastIndexOf("/") + 1, path.length()-4).toLowerCase();
+            String FileDay = FileName.substring(6,8);
+            EachDayFood food = new EachDayFood(path);
+            if (FileDay.equals(lastFileDay)){
+                list.add(food);
+            }else{
+                list = new ArrayList<EachDayFood>();
+                list.add(food);
+                lastFileDay=FileDay;
+                EachDayFoodGrid foodGrid = new EachDayFoodGrid(lastFileDay+" "+Month,"2300Kcal",list);
+                gridList.add(foodGrid);
+            }
+
+        }
+
+
     }
 }

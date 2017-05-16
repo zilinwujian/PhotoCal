@@ -241,7 +241,7 @@
 
         </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -257,7 +257,18 @@
                 android:layout_gravity="center"
                 />
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/recognition_confirm_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="OK"
+                android:gravity="center"
+                android:textSize="24sp"
+                android:layout_gravity="center"
+                android:textColor="#ffffff"
+                />
+
+        </RelativeLayout>
 
 
     </LinearLayout>

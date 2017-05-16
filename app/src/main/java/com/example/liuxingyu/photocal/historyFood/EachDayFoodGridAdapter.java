@@ -1,6 +1,7 @@
 package com.example.liuxingyu.photocal.historyFood;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -12,6 +13,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 
 import com.example.liuxingyu.photocal.R;
+import com.example.liuxingyu.photocal.photo.Recognition;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -36,6 +38,7 @@ public class EachDayFoodGridAdapter extends ArrayAdapter<EachDayFood> {
         EachDayFood food = getItem(position); // 获取当前项的Food实例
         View view;
         ViewHolder viewHolder;
+        OnClick listener=null;
         if (convertView == null){
             view = LayoutInflater.from(getContext()).inflate(resourceId, null);
             viewHolder = new ViewHolder();
@@ -47,6 +50,8 @@ public class EachDayFoodGridAdapter extends ArrayAdapter<EachDayFood> {
         }
         //viewHolder.foodImage.setImageResource(food.getImageId());
         viewHolder.foodImage.setImageBitmap(getBitmapFromPath(food.getImagePath()));
+        listener = new OnClick(position,food.getImagePath());
+        viewHolder.foodImage.setOnClickListener(listener);
         return view;
     }
 
@@ -76,6 +81,25 @@ public class EachDayFoodGridAdapter extends ArrayAdapter<EachDayFood> {
             }
         }
         return bitmap;
+    }
+
+    class OnClick implements View.OnClickListener {
+        int position;
+        String imagePath;
+
+        public OnClick(int position,String imagePath){
+            this.position = position;
+            this.imagePath=imagePath;
+        }
+
+        @Override
+        public void onClick(View v) {
+            Context context=v.getContext();  //运行上下文
+            Intent intent = new Intent(context, Recognition.class);
+            intent.putExtra("order","photo");
+            intent.putExtra("picPath",this.imagePath);
+            context.startActivity(intent);
+        }
     }
 
 

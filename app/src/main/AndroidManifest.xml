@@ -27,6 +27,8 @@
         <activity android:name=".userHome.userHome" android:launchMode="singleTask" />
         <activity android:name=".Notification.NotificationHome" android:launchMode="singleTask" />
         <activity android:name=".Notification.NotificationContent" android:launchMode="singleInstance" />
+        <activity android:name=".recognition.AddDishName" android:launchMode="singleTask" />
+        <activity android:name=".recognition.AddMyDish" android:launchMode="singleTask" />
     </application>
 
 </manifest>

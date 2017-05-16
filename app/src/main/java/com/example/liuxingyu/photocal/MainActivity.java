@@ -112,7 +112,6 @@ public class MainActivity extends Activity implements OnClickListener,AdapterVie
         foodList.add(food);
         food = new MainFood("Jan 2017","132Kcal",R.drawable.main_history_example3);
         foodList.add(food);
-
     }
 
 
